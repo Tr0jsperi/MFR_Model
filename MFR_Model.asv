@@ -1521,16 +1521,17 @@ old_T = temperature(cstr);
 delta_T = 1;
 while ((delta_T > tolerance) || (count < 3)) && (count < 10000)
 tme = tme + dt;
-flagtime = 0;
+tmp = 0;
 errorcount = 0;
-while flagtime < tme
+while tmp < tme
 try 
 advance(network, tme);
-flagtime = tme;
+tmp = tme;
 catch exception
 errorcount = errorcount + 1;
 if errorcount > 10
 rethrow(exception);
+disp(['error times =', errorcount]); 
 end
 end
 end
