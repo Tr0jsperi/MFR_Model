@@ -66,7 +66,9 @@ C_nlg - the carbon release predicted by the CPD model
 % cp - particle heat capacity (J/kg-K and cal/g-K depending on context)
 % cpa - ash heat capacity (cal/g-K)
 % cpc - DAF char heat capacity (cal/g-K)
-% cpgvector - mass-based heat capacity of gas (J/kg-K)
+
+cpgvector - mass-based heat capacity of gas (J/kg-K)
+
 % CPU_time - stores the total time CPU is used in ignition part of model
 % CPU_time_per_step - store the average time per iteration that the CPU is
 % used during the ignition part of the model
@@ -82,8 +84,11 @@ delta_max - the maximum temperature change between iteration
 % delta_T - change in temperature from 1 iteration
 % devol_incomplete - logical variable that tracks whether devolatilization
 % is complete or not
-% DiffCoeffs - mixture-averaged diffusion coefficents (m^2/s)
-% diffwvector - mixture-averaged diffusion coefficient (m^2/s) for water
+
+DiffCoeffs - mixture-averaged diffusion coefficents (m^2/s)
+
+diffwvector - mixture-averaged diffusion coefficient (m^2/s) for water
+
 % downstream - a Cantera reservoir object connected to the outlet of each
 % CSTR
 % dp - coal particle diameter (only 1 value is used to represent all
@@ -106,16 +111,23 @@ delta_max - the maximum temperature change between iteration
 % fchar - equals 1 - fvol. See cpdcp_nlg for more details
 % fcross - fraction of original D.A.F. coal that was metaplast and
 % crosslinked into the char matrix
-% ffgas the fraction of total mass release (i.e. volatiles) that is
-% h2o, co2, ch4, co, and other light gases.
-% ffgas2 - ffgas modified to include unknown volatiles estimated as a
-% mixture of CH4 and C2H2
+
+ffgas - the fraction of total mass release (i.e. volatiles) that is h2o, co2, ch4, co, and other light gases.
+
+ffgas2 - ffgas modified to include unknown volatiles estimated as a mixture of CH4 and C2H2
+
+
 % fgas - mass fraction of D.A.F. coal evolved as light gas
 % fid - pointer to output file
-% fmet - mass fraction of D.A.F. coal existing as metaplast
-% fnchar - fraction of original nitrogen remaining in char (and metaplast)
-% fnhcn - fraction of original nitrogen released as light gas (by
-% difference: 1 - fnchar - fntar)
+
+flagtime - time to judge if the advance function works successfully
+
+fmet - mass fraction of D.A.F. coal existing as metaplast
+
+fnchar - fraction of original nitrogen remaining in char (and metaplast)
+
+fnhcn - fraction of original nitrogen released as light gas (by difference: 1 - fnchar - fntar)
+
 % fnt - nitrogen content of char and metaplast
 % fntar - fraction of original nitrogen released as tar
 % fntot - total fractional release of nitrogen
@@ -126,7 +138,9 @@ delta_max - the maximum temperature change between iteration
 % gas_const - The universal gas constant in cal/gmol.K
 % gasification - 1 or 0 values respectively determine whether char
 % gasification by CO2 is modeled or not
-% gw - a Cantera wall object between adjacent CSTR's to model conduction
+
+gw - a Cantera wall object between adjacent CSTR's to model conduction
+
 % heat transfer between the gases in each CSTR
 % h - convective heat transfer coefficient
 % H - enthalpy of gas mixture (J/kg)
@@ -193,7 +207,9 @@ kgvector - vector of gas thermal conductivity (W/m.K)
 % N2Index - Index of the species in the gas mixture Cantera objects
 % NCE - conversion efficiency of fuel nitrogen converted to NO + NO2
 % assuming all NO + NO2 originates from fuel nitrogen
-% network - a Cantera object that holds the reactor networks
+
+network - a Cantera object that holds the reactor networks
+
 % network_cell_array - an array of CSTR reactor networks. Each network
 % consists of the upstream reservoir, followed by the mass
 % flow controller, the CSTR, the valve and the downstream
@@ -223,7 +239,9 @@ kgvector - vector of gas thermal conductivity (W/m.K)
 % position - vector of CSTR locations along the MFR axis
 % press - pressure in atmospheres
 % pressurevector - vector of CSTR pressures (Pa)
-% prgas - Prandtl number of gas
+
+prgas - Prandtl number of gas
+
 % Primary - fraction of total oxidizer through the burner (0 < Primary < 1)
 % prompt - multiplier for prompt NOx mechanism reactions (0 or 1)
 % qconv - convective heat transer rate (cal/s)
@@ -263,7 +281,8 @@ rhogas - gas density (kg/m^3)
 % Temp - temperatures used in radiation heat transfer calculations
 % texit - exhaust pipe temperature (K)
 % tfilm - film temperature (average of gas and particle temperatures) (K)
-% tg - gas temperature (K)
+
+tg - gas temperature (K)
 
 tgas - gas temperature (K)
 
@@ -271,7 +290,9 @@ tgas - gas temperature (K)
 % timax - maximum allowable devolatilization time for CPD model
 % timedata - time of day that output file is started
 % tme - cumulative integration time for reactor networks
-% tms - time in milliseconds from CPD model
+
+tms - time in milliseconds from CPD model
+
 % tolerance - maximum allowable change in temperature between time steps of
 % CSTR integration to force steady state conditions
 
@@ -301,7 +322,9 @@ ugvector - vector of gas viscosity (g/(m.s) = Pa.s)
 % XCO - mole fraction of CO
 % XCO2 - mole fraction of CO2
 % Xi - mole fractions of species in gas mixture
-% xm - Particle position (m) from CPD model
+
+xm - Particle position (m) from CPD model
+
 % XNO - mole fraction of NO
 % XNO2 - mole fraction of NO2
 % XO2 - mole fraction of O2
