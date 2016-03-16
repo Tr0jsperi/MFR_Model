@@ -80,7 +80,7 @@ Length2 = Length; % Length of CSTR's after ignition network (see also
 % emissivity of:
 emiss = [0.4; % burner
 0.5; % walls
-0.999 % exhaust tube (a cavity)
+0.999; % exhaust tube (a cavity)
 0.7]; % particle
 tbnr = 400.0; % burner face temperature (K)
 texit = 900.0; % exhaust tube temperature (K)
