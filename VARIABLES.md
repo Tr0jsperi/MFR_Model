@@ -18,10 +18,14 @@ aij - an array of the number of atoms of C, H, N, and O in the species in
 % in columns
 % Air_in - flow rate of air through the burner (kg/hr)
 % ambient - a gas mixture object used to create the env reservoir
-% AO2 - pre-exponential factor for char oxidiation (g/(cm2s atmO2))
+
+AO2 - pre-exponential factor for char oxidiation (g/(cm2s atmO2))
+
 % Area - cross sectional area of reactor (m^2)
 % ASHratio - (kg_ash/kg_DAF_CHAR) in the CHAR
-% ASTMvol - ASTM proximate analysis volatiles, DAF (0 < ASTMvol < 100)
+
+ASTMvol - ASTM proximate analysis volatiles, DAF (0 < ASTMvol < 100)
+
 % b - transfer number for effects of high mass transfer
 % bi - intermediate variable in calculation of r
 % blow - blowing factor = b/(exp(b)-1) for effects of high mass transfer
@@ -98,7 +102,9 @@ diffwvector - mixture-averaged diffusion coefficient (m^2/s) for water
 % dummygas - a gas mixture object used for property evaluation at film
 % temperatures
 % EACO2 - activation energy for char gasification by CO2 (cal/gmole)
-% EAO2 - activation energy for char oxidation (cal/gmole)
+
+EAO2 - activation energy for char oxidation (cal/gmole)
+
 % emiss - emissivity (gray) values for radiation calculations as defined in
 % input file comments
 % env - a reservoir that represents the ambient environment that absorbs
@@ -242,7 +248,8 @@ network - a Cantera object that holds the reactor networks
 
 prgas - Prandtl number of gas
 
-% Primary - fraction of total oxidizer through the burner (0 < Primary < 1)
+Primary - fraction of total oxidizer through the burner (0 < Primary < 1)
+
 % prompt - multiplier for prompt NOx mechanism reactions (0 or 1)
 % qconv - convective heat transer rate (cal/s)
 % Q_conv - qconv converted to J/s

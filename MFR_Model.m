@@ -131,7 +131,7 @@ cleanup; % Clear Cantera objects in memory
 % Comment out all but one line:
 % txt is the appropriate filename extension for the output file
 % for use in Microsoft Excel - output is tab-delimited text
-Sub_bit_Air_Input; output = 'Sub_bit_Air_Output.txt';
+case03_Input; output = 'case03_Output.txt';
 % Sub_bit_O25_Input; output = 'Sub_bit_O25_Output.txt';
 % Sub_bit_O30_Input; output = 'Sub_bit_O30_Output.txt';
 % Sub_bit_Air_Opt_Input; output = 'Sub_bit_Air_Opt_Output.txt';
