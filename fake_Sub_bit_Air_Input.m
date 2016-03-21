@@ -1,12 +1,12 @@
 %---INPUT SCRIPT FOR MFR Coal Combustion Model-----------------------------
 % Reactant Flow Rates:
-NG_in = 0.373; % kg/hr Natural Gas (assumed 100% CH4)
-COAL = 0.877; % kg/hr coal (including moisture and ash)
+NG_in = 0.1; % kg/hr Natural Gas (assumed 100% CH4)
+COAL = 1.6; % kg/hr coal (including moisture and ash)
 % see below for more coal-related variables
 Primary = 0.607; % fraction of oxidizer to primary combustion zone
 % NOTE: The following 4 variables are flow rates through the burner (i.e.
 % excluding burnout oxidizer)
-Air_in = 18.42*Primary; % kg/hr Air (assumed 1 mole O2 to 3.76 moles N2)
+Air_in = 6*Primary; % kg/hr Air (assumed 1 mole O2 to 3.76 moles N2)
 O2_in = 0*Primary; % kg/hr Bottled O2 (assumed 100% pure)
 CO2_in = 0*Primary; % kg/hr Bottled CO2 (assumed 100% pure)
 N2_in = 0*Primary; % kg/hr Bottled N2 (assumed 100% pure)
@@ -80,7 +80,7 @@ Length2 = Length; % Length of CSTR's after ignition network (see also
 % emissivity of:
 emiss = [0.4; % burner
 0.5; % walls
-0.999 % exhaust tube (a cavity)
+0.999; % exhaust tube (a cavity)
 0.7]; % particle
 tbnr = 400.0; % burner face temperature (K)
 texit = 900.0; % exhaust tube temperature (K)

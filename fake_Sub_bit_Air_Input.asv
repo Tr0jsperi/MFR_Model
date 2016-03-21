@@ -1,21 +1,21 @@
 %---INPUT SCRIPT FOR MFR Coal Combustion Model-----------------------------
 % Reactant Flow Rates:
-NG_in = 0.000; % kg/hr Natural Gas (assumed 100% CH4)
-COAL = 6.264; % kg/hr coal (including moisture and ash)
+NG_in = 0.0; % kg/hr Natural Gas (assumed 100% CH4)
+COAL = 1.6; % kg/hr coal (including moisture and ash)
 % see below for more coal-related variables
-Primary = 0.691; % fraction of oxidizer to primary combustion zone
+Primary = 0.607; % fraction of oxidizer to primary combustion zone
 % NOTE: The following 4 variables are flow rates through the burner (i.e.
 % excluding burnout oxidizer)
-Air_in = 32.338*Primary; % kg/hr Air (assumed 1 mole O2 to 3.76 moles N2)
+Air_in = 6*Primary; % kg/hr Air (assumed 1 mole O2 to 3.76 moles N2)
 O2_in = 0*Primary; % kg/hr Bottled O2 (assumed 100% pure)
 CO2_in = 0*Primary; % kg/hr Bottled CO2 (assumed 100% pure)
 N2_in = 0*Primary; % kg/hr Bottled N2 (assumed 100% pure)
 NO_doping = 0; % ppm NO in the CO2 reactant streams
 % Experiment conditions:
-P = 101275; % Pressure (Pa) at BYU's elevation
-T1 = 555; % initial gas temperature (K)
-T2 = 574; % Burnout Oxidizer Pre-heat Temperature (K)
-d = 0.250; % diameter of MFR reactor (m)
+P = 85000; % Pressure (Pa) at BYU's elevation
+T1 = 300; % initial gas temperature (K)
+T2 = 522; % Burnout Oxidizer Pre-heat Temperature (K)
+d = 0.127; % diameter of MFR reactor (m)
 k_wall = 400; % This empirical heat transfer parameter is tuned to match
 % experimental data to account for all heat transfer from
 % the combustion that is not explicitly modeled elsewhere.
@@ -25,25 +25,33 @@ k_wall = 400; % This empirical heat transfer parameter is tuned to match
 % value for Length
 % For coal-cases with Length = 0.002 m, 400 is recommended
 WallX = [0; % Locations of wall temperature measurements (m)
-0.435; % The code interpolates when wall temperatures are
-1.057; % required between these locations.
-1.557; % (linear interpolation)
-2.057;
-2.557;
-3.057;
-3.557;
-4.057;
-4.557];
+0.020; % The code interpolates when wall temperatures are
+0.045; % required between these locations.
+0.071; % (linear interpolation)
+0.096;
+0.122;
+0.147;
+0.172;
+0.198;
+0.413;
+0.879;
+1.171;
+1.475;
+1.751];
 twallvector = [400; % Wall temperature measurements (K)
-1673; % - must correspond to WallX locations.
-1573;
-1473;
-1354;
-1300;
-1240;
-1160;
-1000;
-980];
+1140; % - must correspond to WallX locations.
+1203;
+1235;
+1269;
+1286;
+1285;
+1280;
+1268;
+1324;
+1216;
+1118;
+1046;
+914];
 % Variables related to the gas phase reactions:
 thermal = 1; % multiplier for thermal NOx mechanism reactions
 prompt = 1; % multiplier for prompt NOx mechanism reactions
@@ -77,13 +85,13 @@ emiss = [0.4; % burner
 tbnr = 400.0; % burner face temperature (K)
 texit = 900.0; % exhaust tube temperature (K)
 % Time Step Parameters:
-timax = 3.0; % maximum devolatilization time modeled (seconds)
+timax = 2.0; % maximum devolatilization time modeled (seconds)
 %----------------------------------------------------------------------
 % Proximate and Ultimate Analysis Data for Coal:
 % Stored in array yelem in the order: CHNOS, dry, ash-free mass
 % fractions
-yelem = [0.8193; 0.0469; 0.0093; 0.1148; 0.0097];
-ASTMvol = 38.07; % DAF basis (0 < ASTMvol < 100)
+yelem = [0.7056; 0.0418; 0.0104; 0.2363; 0.0059];
+ASTMvol = 49.72; % DAF basis (0 < ASTMvol < 100)
 % Only required if C13 NMR data will be estimated
 %----------------------------------------------------------------------
 % C13 NMR Structural Data for Coal:
@@ -133,7 +141,7 @@ delhv = -100.0; % Heat of pyrolysis (cal/g), negative indicates
 % Nominally -100.0 cal/g
 omegaw = 0.0846; % mass fraction of moisture in the parent coal
 % (as received, i.e. including ash)
-omegaa = 0.0604; % mass fraction of ash in the parent coal (as received)
+omegaa = 0.0602; % mass fraction of ash in the parent coal (as received)
 % Variables related to the char oxidation and gasification model:
 COAL_Type = 1;
 % 1 = Wyoming Sub-bituminous
