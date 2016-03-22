@@ -131,7 +131,7 @@ cleanup; % Clear Cantera objects in memory
 % Comment out all but one line:
 % txt is the appropriate filename extension for the output file
 % for use in Microsoft Excel - output is tab-delimited text
-fake_Sub_bit_Air_Input; output = 'Sub_bit_Air_Output.txt';
+ fake_Sub_bit_Air_Input; output = 'Sub_bit_Air_Output.txt';
 % Sub_bit_Air_Input; output = 'Sub_bit_Air_Output.txt';
 % case03_Input; output = 'case03_Output.txt';
 % Sub_bit_O25_Input; output = 'Sub_bit_O25_Output.txt';
@@ -548,7 +548,7 @@ Hdiff = Hgoal - H_nlg;
 CHratio = (Cdiff/12.011)./(Hdiff/1.0079);
 ffgas2 = zeros(6,number_reactors+1);
 for i = 2:number_reactors+1
-MolarProportionCH4 = (CHratio(i)-1)/(0.25-1);
+MolarProportionCH4 = (2-2*CHratio(i))/(1+2*CHratio(i));
 MWunknowns = MolarProportionCH4*(12.011+4*1.0079)+...
 (1-MolarProportionCH4)*2*(12.011+1.0079);
 MassProportionCH4 = MolarProportionCH4*(12.011+4*1.0079)/...
